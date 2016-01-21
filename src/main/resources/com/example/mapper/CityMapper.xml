@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.mapper.CityMapper">
+    <select id="findByState" resultType="string">
+       SELECT t.ID FROM `HX_WRITE_OFF_INFO` t WHERE t.CARD_COUPON_NO = 'ML11662576';
+    </select>
+</mapper>
