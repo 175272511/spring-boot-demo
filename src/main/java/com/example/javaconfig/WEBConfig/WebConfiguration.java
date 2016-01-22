@@ -1,4 +1,4 @@
-package com.example.javaconfig.CharsetConfig;
+package com.example.javaconfig.WEBConfig;
 
 import org.springframework.boot.context.embedded.FilterRegistrationBean;
 import org.springframework.boot.context.embedded.ServletListenerRegistrationBean;

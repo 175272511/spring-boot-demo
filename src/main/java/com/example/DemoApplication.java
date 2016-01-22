@@ -6,6 +6,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.context.web.SpringBootServletInitializer;
 
+/**
+ * 配置SpringBootServletInitializer支持以war包部署
+ */
 @SpringBootApplication
 @MapperScan("com.example.mapper")
 public class DemoApplication extends SpringBootServletInitializer {
