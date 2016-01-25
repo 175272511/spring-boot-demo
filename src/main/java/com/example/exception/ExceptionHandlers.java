@@ -4,6 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.BindException;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -24,17 +25,23 @@ public class ExceptionHandlers {
 
     @ExceptionHandler
     @ResponseBody
-    ResponseEntity<?> handleControllerException(HttpServletRequest request, BindingResult result, Throwable ex) {
-        LOGGER.error("Requested URL=", request.getRequestURL());
-        LOGGER.error("Requested URI=", request.getRequestURI());
+    ResponseEntity<?> handleControllerException(HttpServletRequest request, Throwable ex) {
         LOGGER.error("", ex);
         HttpStatus status = getStatus(request);
         Map<Integer, Object> map = new HashMap<>();
-        if(result.hasErrors()){
-            map.put(status.value(),result.getAllErrors().get(0).getDefaultMessage());
-            return new ResponseEntity<>(map, status);
-        }
         map.put(status.value(), "internal error");
+        //输入验证
+        if(ex instanceof BindException){
+            BindException e = (BindException) ex;
+            BindingResult result = e.getBindingResult();
+            if(result.hasErrors()){
+                map.put(status.value(),result.getAllErrors().get(0).getDefaultMessage());
+            }
+        }
+        if(ex instanceof BaseException){
+            map.put(status.value(),ex.getMessage());
+        }
+
         return new ResponseEntity<>(map, status);
     }
 
