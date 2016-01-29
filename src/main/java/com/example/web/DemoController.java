@@ -1,6 +1,7 @@
 package com.example.web;
 
 import com.example.domain.User;
+import com.example.exception.BaseException;
 import com.example.mapper.CityMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -33,5 +34,11 @@ public class DemoController {
     @ResponseBody
     public String findByState(){
         return cityMapper.findByState();
+    }
+
+    @RequestMapping("/test")
+    public String test() throws Exception {
+        throw new BaseException("eeeeeeeeeee");
+//        return "welcome";
     }
 }

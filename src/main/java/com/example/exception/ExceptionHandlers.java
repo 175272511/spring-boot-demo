@@ -1,5 +1,6 @@
 package com.example.exception;
 
+import com.alibaba.fastjson.JSON;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
@@ -10,7 +11,11 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -24,9 +29,10 @@ public class ExceptionHandlers {
     private static final Logger LOGGER = LoggerFactory.getLogger(ExceptionHandlers.class);
 
     @ExceptionHandler
-    @ResponseBody
-    ResponseEntity<?> handleControllerException(HttpServletRequest request, Throwable ex) {
+    void handleControllerException(HttpServletRequest request, HttpServletResponse response, Throwable ex) throws IOException, ServletException {
+        System.out.println(request.getRequestURL());
         LOGGER.error("", ex);
+        PrintWriter pw = response.getWriter();
         HttpStatus status = getStatus(request);
         Map<Integer, Object> map = new HashMap<>();
         map.put(status.value(), "internal error");
@@ -36,13 +42,17 @@ public class ExceptionHandlers {
             BindingResult result = e.getBindingResult();
             if(result.hasErrors()){
                 map.put(status.value(),result.getAllErrors().get(0).getDefaultMessage());
+                pw.write(JSON.toJSONString(map));
+                pw.close();
             }
-        }
-        if(ex instanceof BaseException){
+        }else if(ex instanceof BaseException){
             map.put(status.value(),ex.getMessage());
+            pw.write(JSON.toJSONString(map));
+            pw.close();
+        }else{
+            response.sendError(status.value());
         }
 
-        return new ResponseEntity<>(map, status);
     }
 
     private HttpStatus getStatus(HttpServletRequest request) {
