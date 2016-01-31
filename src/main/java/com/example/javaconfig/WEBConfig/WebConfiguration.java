@@ -1,4 +1,4 @@
-package com.example.javaconfig.WEBConfig;
+package com.example.javaconfig.webconfig;
 
 import org.springframework.boot.context.embedded.FilterRegistrationBean;
 import org.springframework.boot.context.embedded.ServletListenerRegistrationBean;

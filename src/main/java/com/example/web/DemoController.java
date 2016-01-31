@@ -38,7 +38,7 @@ public class DemoController {
 
     @RequestMapping("/test")
     public String test() throws Exception {
-        throw new BaseException("eeeeeeeeeee");
+        throw new Exception("eeeeeeeeeee");
 //        return "welcome";
     }
 }

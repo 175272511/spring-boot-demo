@@ -5,12 +5,13 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.context.web.SpringBootServletInitializer;
+import org.springframework.context.annotation.ComponentScan;
 
 /**
  * 配置SpringBootServletInitializer支持以war包部署
  */
 @SpringBootApplication
-@MapperScan("com.example.mapper")
+@ComponentScan("com.example")
 public class DemoApplication extends SpringBootServletInitializer {
 
 	@Override
