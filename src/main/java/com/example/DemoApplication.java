@@ -12,6 +12,7 @@ import org.springframework.context.annotation.ComponentScan;
  */
 @SpringBootApplication
 @ComponentScan("com.example")
+@MapperScan("com.example.mapper")
 public class DemoApplication extends SpringBootServletInitializer {
 
 	@Override
