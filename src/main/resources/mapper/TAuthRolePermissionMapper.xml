@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.demo.mapper.TAuthRolePermissionMapper" >
+  <resultMap id="BaseResultMap" type="com.example.demo.domain.TAuthRolePermission" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="roleId" property="roleid" jdbcType="BIGINT" />
+    <result column="permissionId" property="permissionid" jdbcType="BIGINT" />
+    <result column="createTime" property="createtime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, roleId, permissionId, createTime
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_auth_role_permission
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from t_auth_role_permission
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.example.demo.domain.TAuthRolePermission" >
+    insert into t_auth_role_permission (id, roleId, permissionId, 
+      createTime)
+    values (#{id,jdbcType=BIGINT}, #{roleid,jdbcType=BIGINT}, #{permissionid,jdbcType=BIGINT}, 
+      #{createtime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.example.demo.domain.TAuthRolePermission" >
+    insert into t_auth_role_permission
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="roleid != null" >
+        roleId,
+      </if>
+      <if test="permissionid != null" >
+        permissionId,
+      </if>
+      <if test="createtime != null" >
+        createTime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="roleid != null" >
+        #{roleid,jdbcType=BIGINT},
+      </if>
+      <if test="permissionid != null" >
+        #{permissionid,jdbcType=BIGINT},
+      </if>
+      <if test="createtime != null" >
+        #{createtime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.example.demo.domain.TAuthRolePermission" >
+    update t_auth_role_permission
+    <set >
+      <if test="roleid != null" >
+        roleId = #{roleid,jdbcType=BIGINT},
+      </if>
+      <if test="permissionid != null" >
+        permissionId = #{permissionid,jdbcType=BIGINT},
+      </if>
+      <if test="createtime != null" >
+        createTime = #{createtime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.example.demo.domain.TAuthRolePermission" >
+    update t_auth_role_permission
+    set roleId = #{roleid,jdbcType=BIGINT},
+      permissionId = #{permissionid,jdbcType=BIGINT},
+      createTime = #{createtime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

@@ -14,7 +14,7 @@ import org.springframework.web.util.IntrospectorCleanupListener;
 public class WebConfiguration {
 
     /**
-     * 设置字符编码
+     * 过滤器/设置字符编码
      * @return
      */
     @Bean
