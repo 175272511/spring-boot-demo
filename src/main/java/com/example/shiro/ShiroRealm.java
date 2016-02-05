@@ -10,14 +10,12 @@ import org.apache.shiro.subject.PrincipalCollection;
 import org.apache.shiro.util.ByteSource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
 
 /**
  * Created by liuhui on 2016/2/5.
  */
-@Component
 public class ShiroRealm extends AuthorizingRealm {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(ShiroRealm.class);
@@ -42,7 +40,7 @@ public class ShiroRealm extends AuthorizingRealm {
         TAuthUser user = userService.findByUsername(username);
 
         if(user == null) {
-            throw new AuthenticationException();//没找到帐号
+            throw new UnknownAccountException();//没找到帐号
         }
 
         //交给AuthenticatingRealm使用CredentialsMatcher进行密码匹配，如果觉得人家的不好可以自定义实现

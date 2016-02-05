@@ -30,13 +30,14 @@ public class LoginController {
 
     @RequestMapping("login")
     public String login(TAuthUser user, Model model){
+        System.out.println(111);
 
-//        Subject subject = SecurityUtils.getSubject();
-//        if (!subject.isAuthenticated()) {
-//            UsernamePasswordToken token = new UsernamePasswordToken(user.getUsername(), user.getPassword());
-//            token.setRememberMe(true);
-//            subject.login(token);
-//        }
+        Subject subject = SecurityUtils.getSubject();
+        if (!subject.isAuthenticated()) {
+            UsernamePasswordToken token = new UsernamePasswordToken(user.getUsername(), user.getPassword());
+            token.setRememberMe(true);
+            subject.login(token);
+        }
 
         return "welcome";
     }
