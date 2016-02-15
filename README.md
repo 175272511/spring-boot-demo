@@ -7,12 +7,10 @@ orm采用Druid+Mybatis
 
 web支持jsp开发
 
-##未完成
-
 整合Mybatis分页
 
-权限security和shiro添加
+shiro权限控制,会话session+redis
 
-会话session+redis
+##未完成
 
 整合dubbo
