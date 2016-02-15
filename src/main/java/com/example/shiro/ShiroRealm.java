@@ -10,12 +10,14 @@ import org.apache.shiro.subject.PrincipalCollection;
 import org.apache.shiro.util.ByteSource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
 
 /**
  * Created by liuhui on 2016/2/5.
  */
+@Component
 public class ShiroRealm extends AuthorizingRealm {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(ShiroRealm.class);
@@ -50,6 +52,7 @@ public class ShiroRealm extends AuthorizingRealm {
 //                ByteSource.Util.bytes(user.getCredentialsSalt()),//salt=username+salt
                 getName()  //realm name
         );
+
         return authenticationInfo;
     }
 }

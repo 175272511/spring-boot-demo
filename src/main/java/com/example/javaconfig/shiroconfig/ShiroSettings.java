@@ -17,6 +17,16 @@ public class ShiroSettings {
     private String unauthorizedUrl;
     //过滤链定义
     private String filterChainDefinitions;
+    //redis设置
+    private RedisSettings redis;
+
+    public RedisSettings getRedis() {
+        return redis;
+    }
+
+    public void setRedis(RedisSettings redis) {
+        this.redis = redis;
+    }
 
     public String getLoginUrl() {
         return loginUrl;

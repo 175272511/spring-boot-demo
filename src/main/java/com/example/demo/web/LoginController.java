@@ -2,10 +2,8 @@ package com.example.demo.web;
 
 import com.example.demo.domain.TAuthUser;
 import org.apache.shiro.SecurityUtils;
-import org.apache.shiro.authc.AuthenticationException;
-import org.apache.shiro.authc.IncorrectCredentialsException;
-import org.apache.shiro.authc.UnknownAccountException;
 import org.apache.shiro.authc.UsernamePasswordToken;
+import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.apache.shiro.subject.Subject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -13,7 +11,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import javax.servlet.http.HttpServletRequest;
 
 /**
  * Created by liuhui on 2016/2/5.
@@ -30,13 +27,15 @@ public class LoginController {
 
     @RequestMapping("login")
     public String login(TAuthUser user, Model model){
-        System.out.println(111);
 
         Subject subject = SecurityUtils.getSubject();
-        if (!subject.isAuthenticated()) {
-            UsernamePasswordToken token = new UsernamePasswordToken(user.getUsername(), user.getPassword());
-            token.setRememberMe(true);
+        UsernamePasswordToken token = new UsernamePasswordToken(user.getUsername(), user.getPassword());
+        token.setRememberMe(true);
+        try {
             subject.login(token);
+        }catch (Exception e){
+            LOGGER.warn("帐号密码错误");
+            return "redirect:index";
         }
 
         return "welcome";
@@ -49,6 +48,12 @@ public class LoginController {
             subject.logout();
         }
         return "login";
+    }
+
+    @RequestMapping("welcome")
+    @RequiresPermissions("admin:test1")
+    public String welcome(){
+        return "welcome";
     }
 
     @RequestMapping("unauthorized")
