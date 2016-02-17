@@ -1,5 +1,4 @@
-# demo
-spring boot demo
+# spring-boot-demo
 
 ##已完成
 
