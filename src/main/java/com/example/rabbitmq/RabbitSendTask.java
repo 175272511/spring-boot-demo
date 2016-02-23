@@ -18,7 +18,7 @@ public class RabbitSendTask {
     @Autowired
     private RabbitTemplate rabbitTemplate;
 
-    @Scheduled(cron = "0/5 * * * * ?")
+//    @Scheduled(cron = "0/5 * * * * ?")
     public void sendMessage(){
         RabbitVO rabbitVO = new RabbitVO();
         String[] data = new String[]{"1","2","3","4","5","6"};
