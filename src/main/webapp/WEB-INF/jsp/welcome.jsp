@@ -4,13 +4,15 @@
 <!DOCTYPE html>
 
 
-<html lang="en">
+<html>
 
 <body>
 登录成功1
 <form action="/logout">
     <input type="submit" value="退出">
 </form>
+
+<script src="${urls.getForLookupPath('/js/index.js') }"></script>
 </body>
 
 </html>

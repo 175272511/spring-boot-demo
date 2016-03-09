@@ -6,7 +6,7 @@
 	<groupId>com.example</groupId>
 	<artifactId>demo</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
+	<packaging>war</packaging>
 
 	<name>demo</name>
 	<description>Demo project for Spring Boot</description>
@@ -167,6 +167,58 @@
 				<configuration>
 					<source>1.7</source>
 					<target>1.7</target>
+				</configuration>
+			</plugin>
+			<!-- 版本更新插件 -->
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>versions-maven-plugin</artifactId>
+				<version>2.2</version>
+			</plugin>
+
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.5</version>
+				<configuration>
+					<!-- 解决maven package覆盖掉压缩文件的问题 -->
+					<warSourceExcludes>
+						%regex[^.+(?:(?&lt;!(?:-|\.)min)\.js)],
+						%regex[^.+(?:(?&lt;!(?:-|\.)min)\.css)]
+					</warSourceExcludes>
+
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>net.alchim31.maven</groupId>
+				<artifactId>yuicompressor-maven-plugin</artifactId>
+				<version>1.5.1</version>
+				<executions>
+					<execution>
+						<phase>prepare-package</phase>
+						<goals>
+							<goal>compress</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<includes>
+						<include>**/*.js</include>
+						<include>**/*.css</include>
+					</includes>
+					<excludes>
+						<exclude>**/*.min.js</exclude>
+						<exclude>**/*-min.js</exclude>
+					</excludes>
+					<encoding>utf8</encoding>
+					<failOnWarning>false</failOnWarning>
+					<force>true</force>
+					<nosuffix>true</nosuffix>
+					<!--<suffix>.min</suffix>-->
+					<linebreakpos>-1</linebreakpos>
+					<jswarn>false</jswarn>
 				</configuration>
 			</plugin>
 		</plugins>

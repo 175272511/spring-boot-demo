@@ -32,7 +32,7 @@ public class RabbitP2PSendTask {
         return new Queue("tut.hello");
     }
 
-    @Scheduled(cron = "0/5 * * * * ?")
+//    @Scheduled(cron = "0/5 * * * * ?")
     public void sendMessage(){
         RabbitVO rabbitVO = new RabbitVO();
         String[] data = new String[]{"1","2","3","4","5","6","7","8","9"};
