@@ -4,6 +4,7 @@ import com.example.demo.domain.TAuthUser;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
+import org.apache.shiro.session.Session;
 import org.apache.shiro.subject.Subject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -22,6 +23,8 @@ public class LoginController {
 
     @RequestMapping("index")
     public String index(){
+        //TODO 判断session是否保存在redis
+        Session session = SecurityUtils.getSubject().getSession();
         return "login";
     }
 
