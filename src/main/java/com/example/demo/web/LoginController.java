@@ -12,6 +12,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.servlet.http.HttpSession;
+
 
 /**
  * Created by liuhui on 2016/2/5.
@@ -22,9 +24,15 @@ public class LoginController {
     private static final Logger LOGGER = LoggerFactory.getLogger(LoginController.class);
 
     @RequestMapping("index")
-    public String index(){
+    public String index(HttpSession httpSession){
         //TODO 判断session是否保存在redis
         Session session = SecurityUtils.getSubject().getSession();
+        session.setAttribute("test","test11");
+        System.out.println("shirosession:" + session.getAttribute("test"));
+
+        //TODO 查看redis是否存在该session
+        httpSession.setAttribute("httptest","test22");
+        System.out.println("httpsession:" + httpSession.getAttribute("httptest"));
         return "login";
     }
 
