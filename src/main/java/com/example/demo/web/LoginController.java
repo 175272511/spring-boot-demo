@@ -4,12 +4,12 @@ import com.example.demo.domain.TAuthUser;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
-import org.apache.shiro.session.Session;
 import org.apache.shiro.subject.Subject;
+import org.crazycake.shiro.RedisManager;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpSession;
@@ -24,21 +24,12 @@ public class LoginController {
     private static final Logger LOGGER = LoggerFactory.getLogger(LoginController.class);
 
     @RequestMapping("index")
-    public String index(HttpSession httpSession){
-        //TODO 判断session是否保存在redis
-        Session session = SecurityUtils.getSubject().getSession();
-        session.setAttribute("test","test11");
-        System.out.println("shirosession:" + session.getAttribute("test"));
-
-        //TODO 查看redis是否存在该session
-        httpSession.setAttribute("httptest","test22");
-        System.out.println("httpsession:" + httpSession.getAttribute("httptest"));
+    public String index(){
         return "login";
     }
 
     @RequestMapping("login")
-    public String login(TAuthUser user, Model model){
-
+    public String login(TAuthUser user){
         Subject subject = SecurityUtils.getSubject();
         UsernamePasswordToken token = new UsernamePasswordToken(user.getUsername(), user.getPassword());
         token.setRememberMe(true);
@@ -48,7 +39,7 @@ public class LoginController {
             LOGGER.warn("帐号密码错误");
             return "redirect:index";
         }
-
+        subject.getSession().setAttribute("userInfo", user);
         return "welcome";
     }
 

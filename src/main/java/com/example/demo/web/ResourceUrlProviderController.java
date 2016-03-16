@@ -16,7 +16,6 @@ public class ResourceUrlProviderController {
 
     @ModelAttribute("urls")
     public ResourceUrlProvider urls() {
-        System.out.println(resourceUrlProvider.getForLookupPath("/js/index.js"));
         return this.resourceUrlProvider;
     }
 }
