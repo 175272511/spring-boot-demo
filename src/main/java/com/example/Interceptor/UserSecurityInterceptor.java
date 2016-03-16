@@ -14,6 +14,11 @@ import java.util.Map;
 public class UserSecurityInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+//        response.setHeader("Access-Control-Allow-Origin", "*");
+//        response.setHeader("Access-Control-Allow-Credentials", "true");//控制是否开启与Ajax的Cookie提交方式
+//        response.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+//        response.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT");
+
         Map<String, String[]> params = request.getParameterMap();
         for (String key : params.keySet()) {
             String[] values = params.get(key);
