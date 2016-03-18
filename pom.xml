@@ -123,11 +123,6 @@
 			<artifactId>shiro-web</artifactId>
 			<version>1.2.4</version>
 		</dependency>
-		<!--<dependency>-->
-			<!--<groupId>org.apache.shiro</groupId>-->
-			<!--<artifactId>shiro-ehcache</artifactId>-->
-			<!--<version>1.2.4</version>-->
-		<!--</dependency>-->
 		<dependency>
 			<groupId>org.apache.shiro</groupId>
 			<artifactId>shiro-spring</artifactId>
@@ -144,6 +139,12 @@
 			<groupId>org.crazycake</groupId>
 			<artifactId>shiro-redis</artifactId>
 			<version>2.4.2.1-RELEASE</version>
+		</dependency>
+		<!-- util -->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>3.3.2</version>
 		</dependency>
 
 	</dependencies>

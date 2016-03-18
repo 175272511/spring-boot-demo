@@ -29,33 +29,33 @@ public class ExceptionHandlers {
     private static final Logger LOGGER = LoggerFactory.getLogger(ExceptionHandlers.class);
 
     @ExceptionHandler
-    void handleControllerException(HttpServletRequest request, HttpServletResponse response, Throwable ex) throws IOException, ServletException {
-        System.out.println(request.getRequestURL());
+    void handleControllerException(HttpServletRequest request, HttpServletResponse response, Throwable ex) throws IOException {
+        LOGGER.error("exception url: " + request.getRequestURL().toString());
+        LOGGER.error("exception data: " + getParameter(request));
+        LOGGER.error("exception info: ", ex);
+        response.setContentType("text/xml;charset=UTF-8");
         PrintWriter pw = response.getWriter();
-        HttpStatus status = getStatus(request);
         Map<String, Object> map = new HashMap<>();
+
         //输入验证
         if(ex instanceof BindException){
             BindException e = (BindException) ex;
             BindingResult result = e.getBindingResult();
             if(result.hasErrors()){
-                LOGGER.error("", ex);
-                map.put(status.value()+"",result.getAllErrors().get(0).getDefaultMessage());
+                String errMsg = result.getAllErrors().get(0).getDefaultMessage();
+                map.put("error", errMsg);
+                if(errMsg.toUpperCase().contains("EXCEPTION")){
+                    map.put("error", "请求失败,请检查输入数据是否有误");
+                }
                 pw.write(JSON.toJSONString(map));
                 pw.close();
             }
         }else if(ex instanceof BaseException){
-            LOGGER.error("", ex);
-            map.put(status.value()+"",ex.getMessage());
+            map.put("error",ex.getMessage());
             pw.write(JSON.toJSONString(map));
             pw.close();
-        }else if(ex instanceof UnauthenticatedException){
-            map.put("error", "鉴权失败");
-            pw.write(JSON.toJSONString(map));
-            pw.close();
-        }else if(ex instanceof UnauthorizedException){
-            response.sendRedirect("unauthorized");
         }else{
+            HttpStatus status = getStatus(request);
             response.sendError(status.value());
         }
 
@@ -67,5 +67,19 @@ public class ExceptionHandlers {
             return HttpStatus.INTERNAL_SERVER_ERROR;
         }
         return HttpStatus.valueOf(statusCode);
+    }
+
+    private String getParameter(HttpServletRequest request){
+        Map<String, String[]> params = request.getParameterMap();
+        String queryString = "";
+        for (String key : params.keySet()) {
+            String[] values = params.get(key);
+            for (int i = 0; i < values.length; i++) {
+                String value = values[i];
+                queryString += key + "=" + value + "&";
+            }
+        }
+        queryString = queryString.substring(0, queryString.length() - 1);
+        return queryString;
     }
 }

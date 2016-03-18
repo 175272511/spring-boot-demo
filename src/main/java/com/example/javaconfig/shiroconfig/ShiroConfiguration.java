@@ -5,10 +5,6 @@ import com.example.javaconfig.mybatisconfig.MybatisConfiguration;
 import org.apache.shiro.mgt.SecurityManager;
 import org.apache.shiro.realm.Realm;
 import org.apache.shiro.session.mgt.SessionManager;
-import org.apache.shiro.session.mgt.SessionValidationScheduler;
-import org.apache.shiro.session.mgt.eis.EnterpriseCacheSessionDAO;
-import org.apache.shiro.session.mgt.eis.SessionDAO;
-import org.apache.shiro.session.mgt.quartz.QuartzSessionValidationScheduler;
 import org.apache.shiro.spring.LifecycleBeanPostProcessor;
 import org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor;
 import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
@@ -94,7 +90,7 @@ public class ShiroConfiguration {
      */
     @Bean
     public DefaultWebSessionManager sessionManager(RedisSessionDAO sessionDAO, SimpleCookie simpleCookie){
-        DefaultWebSessionManager defaultWebSessionManager = new DefaultWebSessionManager();
+        DefaultWebSessionManager defaultWebSessionManager = new MySessionManager();
         //会话的全局过期时间
         defaultWebSessionManager.setGlobalSessionTimeout(1800000);
         //是否删除过期的会话
