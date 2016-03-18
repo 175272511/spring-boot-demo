@@ -33,6 +33,7 @@ public class LoginController {
         //TODO 查看redis是否存在该session
         httpSession.setAttribute("httptest","test22");
         System.out.println("httpsession:" + httpSession.getAttribute("httptest"));
+        System.out.println("test");
         return "login";
     }
 
