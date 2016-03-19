@@ -8,12 +8,16 @@ public class TestForGit {
     public static void main(String[] args) {
         System.out.printf("1");
         System.out.printf("2");
-        System.out.printf("bugfix1");
         System.out.printf("3");
         System.out.printf("4");
         System.out.printf("5");
         System.out.printf("6");
         System.out.printf("7");
-        System.out.printf("bugfix2");
+        System.out.printf("dev1");
+        System.out.printf("dev2");
+    }
+
+    public void test(){
+        System.out.println("test");
     }
 }
