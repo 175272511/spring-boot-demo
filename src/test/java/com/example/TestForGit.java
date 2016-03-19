@@ -15,4 +15,8 @@ public class TestForGit {
         System.out.printf("bugfix");
     }
 
+    public static void test(String[] args) {
+        System.out.println("功能开发");
+    }
+
 }
