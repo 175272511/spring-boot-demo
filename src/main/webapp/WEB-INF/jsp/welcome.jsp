@@ -7,7 +7,7 @@
 <html>
 
 <body>
-登录成功1
+登录成功1:${user.username}
 <form action="/logout">
     <input type="submit" value="退出">
 </form>
