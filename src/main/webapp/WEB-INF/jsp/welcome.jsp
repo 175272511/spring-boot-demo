@@ -13,7 +13,7 @@
 
 <body>
 <form action="/logout">
-登录成功1:${user.username}
+登录成功1111:${user.username}
     <input type="submit" value="退出">
 </form>
     <input id = 'input' value = '点击地图显示地址' disabled style="width: 400px;"/>
