@@ -3,11 +3,13 @@ package com.example.demo.web;
 import com.example.demo.domain.TAuthUser;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.UsernamePasswordToken;
+import org.apache.shiro.authz.annotation.Logical;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.apache.shiro.subject.Subject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 
@@ -36,7 +38,7 @@ public class LoginController {
             return "redirect:index";
         }
         subject.getSession().setAttribute("userInfo", user);
-        return "welcome";
+        return "redirect:welcome";
     }
 
     @RequestMapping("logout")
@@ -49,8 +51,10 @@ public class LoginController {
     }
 
     @RequestMapping("welcome")
-    @RequiresPermissions("admin:test1")
-    public String welcome(){
+    @RequiresPermissions(value = {"admin:test1","user:test1"},logical= Logical.OR)
+    public String welcome(Model model){
+        TAuthUser user = (TAuthUser) SecurityUtils.getSubject().getSession().getAttribute("userInfo");
+        model.addAttribute("user", user);
         return "welcome";
     }
 
