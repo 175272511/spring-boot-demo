@@ -12,7 +12,11 @@ public class TestForGit {
         System.out.printf("4");
         System.out.printf("5");
         System.out.printf("6");
-        System.out.printf("7");
+        System.out.printf("bugfix");
+    }
+
+    public static void test(String[] args) {
+        System.out.println("功能开发");
     }
 
 }
