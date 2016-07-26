@@ -9,7 +9,7 @@
 
     <dubbo:protocol name="dubbo" port="-1"/>
     <!-- test -->
-    <dubbo:service interface="com.example.dubbo.service.HelloService" ref="helloServiceImpl" timeout="10000" retries="0" actives="10" executes="10"/>
+    <dubbo:service interface="com.example.dubbo.service.HelloService" ref="helloServiceImpl" timeout="10000" retries="0" actives="10" executes="10" />
 
 
 </beans>
