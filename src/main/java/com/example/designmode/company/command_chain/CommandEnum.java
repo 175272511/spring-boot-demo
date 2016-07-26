@@ -9,8 +9,8 @@ import java.util.List;
  * 所有的命令在这里定义
  */
 public enum CommandEnum {
-	ls("com.company.command.LSCommand"),
-	df("com.company.command.DFCommand");
+	ls("com.example.designmode.company.command.LSCommand"),
+	df("com.example.designmode.company.command.DFCommand");
 	
 	private String value = "";
 	

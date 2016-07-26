@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <class-diagram version="1.1.6" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
   associations="true" dependencies="false" nesting-relationships="true">  
-  <class id="1" language="java" name="com.company.factorys.section2.Creator" project="DPModel" 
+  <class id="1" language="java" name="com.example.designmode.company.factorys.section2.Creator" project="DPModel"
     file="/DPModel/src/dp/com/company/factorys/section2/Creator.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="183" y="176"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
@@ -10,7 +10,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="2" language="java" name="com.company.factorys.section2.ConcreteCreator" project="DPModel" 
+  <class id="2" language="java" name="com.example.designmode.company.factorys.section2.ConcreteCreator" project="DPModel"
     file="/DPModel/src/dp/com/company/factorys/section2/ConcreteCreator.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="182" y="325"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
@@ -19,7 +19,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="3" language="java" name="com.company.factorys.section2.Product" project="DPModel" 
+  <class id="3" language="java" name="com.example.designmode.company.factorys.section2.Product" project="DPModel"
     file="/DPModel/src/dp/com/company/factorys/section2/Product.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="581" y="178"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
@@ -28,7 +28,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="4" language="java" name="com.company.factorys.section2.ConcreteProduct1" project="DPModel" 
+  <class id="4" language="java" name="com.example.designmode.company.factorys.section2.ConcreteProduct1" project="DPModel"
     file="/DPModel/src/dp/com/company/factorys/section2/ConcreteProduct1.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="497" y="330"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
@@ -37,7 +37,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="5" language="java" name="com.company.factorys.section2.ConcreteProduct2" project="DPModel" 
+  <class id="5" language="java" name="com.example.designmode.company.factorys.section2.ConcreteProduct2" project="DPModel"
     file="/DPModel/src/dp/com/company/factorys/section2/ConcreteProduct2.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="684" y="331"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
@@ -46,7 +46,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="6" language="java" name="com.company.factorys.section2.Client" project="DPModel" 
+  <class id="6" language="java" name="com.example.designmode.company.factorys.section2.Client" project="DPModel"
     file="/DPModel/src/dp/com/company/factorys/section2/Client.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="99" width="146" x="319" y="-24"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 

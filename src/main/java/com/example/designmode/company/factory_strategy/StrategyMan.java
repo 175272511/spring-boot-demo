@@ -7,8 +7,8 @@ package com.example.designmode.company.factory_strategy;
  */
 public enum StrategyMan {
 	
-	SteadyDeduction("com.company.SteadyDeduction"),
-	FreeDeduction("com.company.FreeDeduction");
+	SteadyDeduction("com.example.designmode.company.SteadyDeduction"),
+	FreeDeduction("com.example.designmode.company.FreeDeduction");
 	
 	String value = "";
 	private StrategyMan(String _value){

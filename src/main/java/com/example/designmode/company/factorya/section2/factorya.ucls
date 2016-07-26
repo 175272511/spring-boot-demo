@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <class-diagram version="1.1.6" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
   associations="true" dependencies="false" nesting-relationships="true">  
-  <class id="1" language="java" name="com.company.factorya.section2.AbstractCreator" project="DPModel" 
+  <class id="1" language="java" name="com.example.designmode.company.factorya.section2.AbstractCreator" project="DPModel"
     file="/DPModel/src/dp/com/company/factorya/section2/AbstractCreator.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="426" y="68"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
@@ -10,7 +10,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="2" language="java" name="com.company.factorya.section2.Creator1" project="DPModel" 
+  <class id="2" language="java" name="com.example.designmode.company.factorya.section2.Creator1" project="DPModel"
     file="/DPModel/src/dp/com/company/factorya/section2/Creator1.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="303" y="216"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
@@ -19,7 +19,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="3" language="java" name="com.company.factorya.section2.Creator2" project="DPModel" 
+  <class id="3" language="java" name="com.example.designmode.company.factorya.section2.Creator2" project="DPModel"
     file="/DPModel/src/dp/com/company/factorya/section2/Creator2.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="540" y="218"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
@@ -28,7 +28,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="4" language="java" name="com.company.factorya.section2.AbstractProductA" project="DPModel" 
+  <class id="4" language="java" name="com.example.designmode.company.factorya.section2.AbstractProductA" project="DPModel"
     file="/DPModel/src/dp/com/company/factorya/section2/AbstractProductA.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="230" y="367"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
@@ -37,7 +37,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="5" language="java" name="com.company.factorya.section2.ProductA1" project="DPModel" 
+  <class id="5" language="java" name="com.example.designmode.company.factorya.section2.ProductA1" project="DPModel"
     file="/DPModel/src/dp/com/company/factorya/section2/ProductA1.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="147" y="536"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
@@ -46,7 +46,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="6" language="java" name="com.company.factorya.section2.ProductA2" project="DPModel" 
+  <class id="6" language="java" name="com.example.designmode.company.factorya.section2.ProductA2" project="DPModel"
     file="/DPModel/src/dp/com/company/factorya/section2/ProductA2.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="325" y="536"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
@@ -55,7 +55,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="7" language="java" name="com.company.factorya.section2.AbstractProductB" project="DPModel" 
+  <class id="7" language="java" name="com.example.designmode.company.factorya.section2.AbstractProductB" project="DPModel"
     file="/DPModel/src/dp/com/company/factorya/section2/AbstractProductB.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="619" y="377"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
@@ -64,7 +64,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="8" language="java" name="com.company.factorya.section2.ProductB1" project="DPModel" 
+  <class id="8" language="java" name="com.example.designmode.company.factorya.section2.ProductB1" project="DPModel"
     file="/DPModel/src/dp/com/company/factorya/section2/ProductB1.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="720" y="539"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
@@ -73,7 +73,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="9" language="java" name="com.company.factorya.section2.ProductB2" project="DPModel" 
+  <class id="9" language="java" name="com.example.designmode.company.factorya.section2.ProductB2" project="DPModel"
     file="/DPModel/src/dp/com/company/factorya/section2/ProductB2.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="537" y="540"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 

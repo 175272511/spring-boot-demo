@@ -1,6 +1,6 @@
 package com.example.designmode.company.specification.section2;
 
-import com.company.specification.section1.User;
+import com.example.designmode.company.specification.section1.User;
 
 import java.util.ArrayList;
 

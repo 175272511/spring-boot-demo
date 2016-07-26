@@ -1,8 +1,8 @@
 package com.example.designmode.company.command_chain.command;
 
-import com.company.command_chain.ClassUtils;
-import com.company.command_chain.CommandVO;
-import com.company.command_chain.command_name.CommandName;
+import com.example.designmode.company.command_chain.ClassUtils;
+import com.example.designmode.company.command_chain.CommandVO;
+import com.example.designmode.company.command_chain.command_name.CommandName;
 
 import java.util.ArrayList;
 import java.util.List;

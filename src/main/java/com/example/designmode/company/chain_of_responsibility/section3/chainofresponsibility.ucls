@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <class-diagram version="1.1.6" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
   associations="true" dependencies="false" nesting-relationships="true">  
-  <class id="1" language="java" name="com.company.chain_of_responsibility.section3.Handler" project="DPModel" 
+  <class id="1" language="java" name="com.example.designmode.company.chain_of_responsibility.section3.Handler" project="DPModel"
     file="/DPModel/src/dp/com/company/chain_of_responsibility/section3/Handler.java" binary="false" 
     corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="390" y="123"/>    
@@ -11,7 +11,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="2" language="java" name="com.company.chain_of_responsibility.section3.ConcreteHandler1" project="DPModel" 
+  <class id="2" language="java" name="com.example.designmode.company.chain_of_responsibility.section3.ConcreteHandler1" project="DPModel"
     file="/DPModel/src/dp/com/company/chain_of_responsibility/section3/ConcreteHandler1.java" binary="false" 
     corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="200" y="315"/>    
@@ -21,7 +21,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="3" language="java" name="com.company.chain_of_responsibility.section3.ConcreteHandler2" project="DPModel" 
+  <class id="3" language="java" name="com.example.designmode.company.chain_of_responsibility.section3.ConcreteHandler2" project="DPModel"
     file="/DPModel/src/dp/com/company/chain_of_responsibility/section3/ConcreteHandler2.java" binary="false" 
     corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="413" y="315"/>    
@@ -31,7 +31,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="4" language="java" name="com.company.chain_of_responsibility.section3.ConcreteHandler3" project="DPModel" 
+  <class id="4" language="java" name="com.example.designmode.company.chain_of_responsibility.section3.ConcreteHandler3" project="DPModel"
     file="/DPModel/src/dp/com/company/chain_of_responsibility/section3/ConcreteHandler3.java" binary="false" 
     corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="624" y="314"/>    

@@ -1,6 +1,6 @@
 package com.example.designmode.company.command_chain.command_name.ls;
 
-import com.company.command_chain.command_name.CommandName;
+import com.example.designmode.company.command_chain.command_name.CommandName;
 
 
 /**

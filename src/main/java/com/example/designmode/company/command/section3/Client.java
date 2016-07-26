@@ -1,6 +1,6 @@
-package com.example.designmode.company.command.section3;//package com.company.command.section3;
+package com.example.designmode.company.command.section3;//package com.example.designmode.company.command.section3;
 //
-//import com.company.command.section4.ConcreteReciver1;
+//import com.example.designmode.company.command.section4.ConcreteReciver1;
 //
 //
 //

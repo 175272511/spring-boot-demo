@@ -1,8 +1,8 @@
 package com.example.designmode.company.command_chain.command;
 
-import com.company.command_chain.CommandVO;
-import com.company.command_chain.command_name.CommandName;
-import com.company.command_chain.command_name.ls.AbstractLS;
+import com.example.designmode.company.command_chain.CommandVO;
+import com.example.designmode.company.command_chain.command_name.CommandName;
+import com.example.designmode.company.command_chain.command_name.ls.AbstractLS;
 
 /**
  * @author cbf4Life cbf4life@126.com

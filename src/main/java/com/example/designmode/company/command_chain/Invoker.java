@@ -1,6 +1,6 @@
 package com.example.designmode.company.command_chain;
 
-import com.company.command_chain.command.Command;
+import com.example.designmode.company.command_chain.command.Command;
 
 /**
  * @author cbf4Life cbf4life@126.com

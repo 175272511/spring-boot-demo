@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <class-diagram version="1.1.6" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
   associations="true" dependencies="false" nesting-relationships="true">  
-  <class id="1" language="java" name="com.company.proxy.section3.Proxy" project="DPModel" 
+  <class id="1" language="java" name="com.example.designmode.company.proxy.section3.Proxy" project="DPModel"
     file="/DPModel/src/dp/com/company/proxy/section3/Proxy.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="439" y="298"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
@@ -10,7 +10,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="2" language="java" name="com.company.proxy.section3.RealSubject" project="DPModel" 
+  <class id="2" language="java" name="com.example.designmode.company.proxy.section3.RealSubject" project="DPModel"
     file="/DPModel/src/dp/com/company/proxy/section3/RealSubject.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="131" y="267"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
@@ -19,7 +19,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <interface id="3" language="java" name="com.company.proxy.section3.Subject" project="DPModel" 
+  <interface id="3" language="java" name="com.example.designmode.company.proxy.section3.Subject" project="DPModel"
     file="/DPModel/src/dp/com/company/proxy/section3/Subject.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="262" y="95"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 

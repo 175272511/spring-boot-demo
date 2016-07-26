@@ -1,11 +1,11 @@
 package com.example.designmode.company.mvc.controller;
 
 
-import com.company.mvc.action.ActionDispather;
-import com.company.mvc.action.IActionDispather;
-import com.company.mvc.helper.ValueStackHelper;
-import com.company.mvc.valuestack.ValueStack;
-import com.company.mvc.view.ViewManager;
+import com.example.designmode.company.mvc.action.ActionDispather;
+import com.example.designmode.company.mvc.action.IActionDispather;
+import com.example.designmode.company.mvc.helper.ValueStackHelper;
+import com.example.designmode.company.mvc.valuestack.ValueStack;
+import com.example.designmode.company.mvc.view.ViewManager;
 
 import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;

@@ -1,6 +1,6 @@
 package com.example.designmode.company.mvc.helper;
 
-import com.company.mvc.valuestack.ValueStack;
+import com.example.designmode.company.mvc.valuestack.ValueStack;
 
 import javax.servlet.http.HttpServletRequest;
 

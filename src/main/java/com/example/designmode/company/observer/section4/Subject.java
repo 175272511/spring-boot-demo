@@ -9,7 +9,7 @@ import java.util.Vector;
 public abstract class Subject {
 	
 	
-private com.company.observer.section4.Observer lnkObserver;
+private com.example.designmode.company.observer.section4.Observer lnkObserver;
 	//定一个一个观察者数组
 	private Vector<Observer> obsVector = new Vector<Observer>();
 	

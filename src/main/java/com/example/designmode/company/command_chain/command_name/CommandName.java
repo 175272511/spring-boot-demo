@@ -1,6 +1,6 @@
 package com.example.designmode.company.command_chain.command_name;
 
-import com.company.command_chain.CommandVO;
+import com.example.designmode.company.command_chain.CommandVO;
 
 
 /**

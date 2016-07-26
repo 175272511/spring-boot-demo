@@ -8,7 +8,7 @@ import java.util.Random;
  */
 public class ObjectStruture {
 
-	private com.company.visitor.section3.Element lnkElement;
+	private com.example.designmode.company.visitor.section3.Element lnkElement;
 
 	//对象生成器，这里通过一个工厂方法模式模拟
 	public static Element createElement(){

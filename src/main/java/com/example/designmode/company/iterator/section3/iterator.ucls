@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <class-diagram version="1.1.6" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
   associations="true" dependencies="false" nesting-relationships="true">  
-  <interface id="1" language="java" name="com.company.iterator.section3.Aggregate" project="DPModel" 
+  <interface id="1" language="java" name="com.example.designmode.company.iterator.section3.Aggregate" project="DPModel"
     file="/DPModel/src/dp/com/company/iterator/section3/Aggregate.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="152" y="223"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
@@ -10,7 +10,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
-  <class id="2" language="java" name="com.company.iterator.section3.ConcreteAggregate" project="DPModel" 
+  <class id="2" language="java" name="com.example.designmode.company.iterator.section3.ConcreteAggregate" project="DPModel"
     file="/DPModel/src/dp/com/company/iterator/section3/ConcreteAggregate.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="151" y="403"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
@@ -19,7 +19,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="3" language="java" name="com.company.iterator.section3.ConcreteIterator" project="DPModel" 
+  <class id="3" language="java" name="com.example.designmode.company.iterator.section3.ConcreteIterator" project="DPModel"
     file="/DPModel/src/dp/com/company/iterator/section3/ConcreteIterator.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="413" y="402"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
@@ -28,7 +28,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <interface id="4" language="java" name="com.company.iterator.section3.Iterator" project="DPModel" 
+  <interface id="4" language="java" name="com.example.designmode.company.iterator.section3.Iterator" project="DPModel"
     file="/DPModel/src/dp/com/company/iterator/section3/Iterator.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="412" y="197"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
@@ -37,7 +37,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
-  <class id="5" language="java" name="com.company.iterator.section3.Client" project="DPModel" 
+  <class id="5" language="java" name="com.example.designmode.company.iterator.section3.Client" project="DPModel"
     file="/DPModel/src/dp/com/company/iterator/section3/Client.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="84" y="74"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 

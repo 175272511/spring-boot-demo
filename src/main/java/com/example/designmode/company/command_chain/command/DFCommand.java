@@ -1,7 +1,7 @@
 package com.example.designmode.company.command_chain.command;
 
-import com.company.command_chain.CommandVO;
-import com.company.command_chain.command_name.df.AbstractDF;
+import com.example.designmode.company.command_chain.CommandVO;
+import com.example.designmode.company.command_chain.command_name.df.AbstractDF;
 
 /**
  * @author cbf4Life cbf4life@126.com

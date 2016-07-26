@@ -1,7 +1,7 @@
 package com.example.designmode.company.mvc.action;
 
-import com.company.mvc.helper.ValueStackHelper;
-import com.company.mvc.valuestack.ValueStack;
+import com.example.designmode.company.mvc.helper.ValueStackHelper;
+import com.example.designmode.company.mvc.valuestack.ValueStack;
 
 /**
  * @author cbf4Life cbf4life@126.com

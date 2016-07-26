@@ -5,7 +5,7 @@ package com.example.designmode.company.visitor.section3;
  * I'm glad to share my knowledge with you all.
  */
 public abstract class Element {
-	/*#com.company.visitor.section3.IVisitor lnkIVisitor*/
+	/*#com.example.designmode.company.visitor.section3.IVisitor lnkIVisitor*/
 //定义业务逻辑
 	public abstract void doSomething();
 	

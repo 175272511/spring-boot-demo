@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <class-diagram version="1.1.6" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
   associations="true" dependencies="false" nesting-relationships="true">  
-  <class id="1" language="java" name="com.company.builder.section4.Builder" project="DPModel" 
+  <class id="1" language="java" name="com.example.designmode.company.builder.section4.Builder" project="DPModel"
     file="/DPModel/src/dp/com/company/builder/section4/Builder.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="203" y="135"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
@@ -10,7 +10,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="2" language="java" name="com.company.builder.section4.ConcreteProduct" project="DPModel" 
+  <class id="2" language="java" name="com.example.designmode.company.builder.section4.ConcreteProduct" project="DPModel"
     file="/DPModel/src/dp/com/company/builder/section4/ConcreteProduct.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="473" y="247"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
@@ -19,7 +19,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="3" language="java" name="com.company.builder.section4.Product" project="DPModel" 
+  <class id="3" language="java" name="com.example.designmode.company.builder.section4.Product" project="DPModel"
     file="/DPModel/src/dp/com/company/builder/section4/Product.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="99" width="137" x="404" y="21"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
@@ -28,7 +28,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="4" language="java" name="com.company.builder.section4.Director" project="DPModel" 
+  <class id="4" language="java" name="com.example.designmode.company.builder.section4.Director" project="DPModel"
     file="/DPModel/src/dp/com/company/builder/section4/Director.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="201" y="330"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
