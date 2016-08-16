@@ -19,7 +19,12 @@ public class AppTest {
 
     @Test
     public void test(){
-        helloService.sayHello("test");
+        for(int i = 0; i < 10000; i++){
+            System.out.println("开始执行" + i);
+            helloService.sayHello(i+"");
+
+        }
+
     }
 
 }
