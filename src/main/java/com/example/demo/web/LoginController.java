@@ -50,6 +50,11 @@ public class LoginController {
         return "login";
     }
 
+    /**
+     * admin的test1资源, user的test1资源可用
+     * @param model
+     * @return
+     */
     @RequestMapping("welcome")
     @RequiresPermissions(value = {"admin:test1","user:test1"},logical= Logical.OR)
     public String welcome(Model model){
