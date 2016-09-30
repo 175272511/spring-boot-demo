@@ -7,10 +7,10 @@
 
     <dubbo:registry protocol="zookeeper" address="${zookeeper.address}" />
 
-    <dubbo:protocol name="dubbo" port="-1"/>
+    <dubbo:protocol name="dubbo" port="-1" threadpool="cached" threads="200"/>
     <!-- test -->
     <dubbo:reference interface="com.example.dubbo.service.HelloService" id="helloService" >
-        <dubbo:method name="sayHello" actives="10" executes="10"></dubbo:method>
+        <dubbo:method name="sayHello"></dubbo:method>
     </dubbo:reference>
 
 

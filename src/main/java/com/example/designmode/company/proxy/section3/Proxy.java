@@ -16,7 +16,7 @@ public class Proxy implements Subject {
 	public Proxy(Subject _subject){
 		this.subject = _subject;
 	}
-	
+
 	//通过构造函数传递代理者
 	public Proxy(Object...objects ){
 

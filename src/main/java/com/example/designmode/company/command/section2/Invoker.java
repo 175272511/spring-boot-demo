@@ -11,8 +11,9 @@ public class Invoker {
 	private Command command;
 	
 	//客户发出命令
-	public void setCommand(Command command){
+	public Invoker setCommand(Command command){
 		this.command = command;
+		return this;
 	}
 	
 	//执行客户的命令

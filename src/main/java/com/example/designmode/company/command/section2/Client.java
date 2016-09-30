@@ -18,12 +18,13 @@ public class Client {
 		//客户给我们下命令来
 		//Command command = new AddRequirementCommand();
 		Command command = new DeletePageCommand();
-		
+
 		//接头人接收到命令
-		xiaoSan.setCommand(command);
+		xiaoSan.setCommand(command).action();
+//		xiaoSan.setCommand(command);
 		
 		//接头人执行命令
-		xiaoSan.action();
+//		xiaoSan.action();
 		
 	}
 }

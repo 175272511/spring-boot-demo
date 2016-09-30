@@ -17,7 +17,12 @@ public class MyInvocationHandler implements InvocationHandler {
 	//代理方法	
 	public Object invoke(Object proxy, Method method, Object[] args)
 			throws Throwable {
+		//前置通知
+		new BeforeAdvice().exec();
 		//执行被代理的方法
-		return method.invoke(this.target, args);
+		Object o = method.invoke(this.target, args);
+		//后置通知
+		new AfterAdvice().exec();
+		return o;
 	}
 }

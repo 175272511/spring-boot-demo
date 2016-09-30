@@ -8,6 +8,7 @@ public enum Calculator {
 	//加法运算
 	ADD("+"){
 		public int exec(int a,int b){
+			System.out.println(this.value);
 			return a+b;
 		}
 	},
