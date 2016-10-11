@@ -8,8 +8,8 @@
     <dubbo:registry protocol="zookeeper" address="${zookeeper.address}" />
 
     <dubbo:protocol name="dubbo" port="-1" threadpool="cached" threads="200"/>
-    <!-- test -->
-    <dubbo:reference interface="com.example.dubbo.service.HelloService" id="helloService" >
+    <!-- url:指定访问资源 -->
+    <dubbo:reference interface="com.example.dubbo.service.HelloService" id="helloService" url="dubbo://127.0.0.1:2222">
         <dubbo:method name="sayHello"></dubbo:method>
     </dubbo:reference>
 

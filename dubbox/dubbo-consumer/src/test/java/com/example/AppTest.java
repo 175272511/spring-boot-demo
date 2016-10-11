@@ -30,11 +30,11 @@ public class AppTest {
 
     @Test
     public void test(){
-        for(int i = 0; i < 10000; i++){
-            System.out.println("开始执行" + i);
-            helloService.sayHello(i+"");
+//        for(int i = 0; i < 10000; i++){
+//            System.out.println("开始执行" + i);
+            helloService.sayHello("123");
 
-        }
+//        }
 
     }
 
