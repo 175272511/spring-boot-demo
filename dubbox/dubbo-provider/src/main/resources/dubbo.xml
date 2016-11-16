@@ -6,9 +6,9 @@
     <dubbo:application  name="dubbox-provider" owner="liuhui"/>
 
     <!--register:false  不在注册中心注册-->
-    <dubbo:registry protocol="zookeeper" address="${zookeeper.address}" register="false"/>
+    <dubbo:registry protocol="zookeeper" address="${zookeeper.host}"/>
 
-    <dubbo:protocol name="dubbo" port="2222" threadpool="cached" threads="200" />
+    <dubbo:protocol name="dubbo" port="-1" threadpool="cached" threads="200" />
     <!-- test -->
     <dubbo:service interface="com.example.dubbo.service.HelloService" ref="helloServiceImpl" timeout="10000" retries="0"/>
 

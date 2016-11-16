@@ -5,5 +5,5 @@ package com.example.dubbo.service;
  */
 public interface HelloService {
 
-    void sayHello(String name);
+    String sayHello(String name);
 }
