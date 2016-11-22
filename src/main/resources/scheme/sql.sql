@@ -26,7 +26,7 @@ CREATE TABLE `t_auth_user` (
 
 INSERT INTO t_auth_user(`id`,`userType`,`roleId`,`username`,`password`,`sex`,`nickname`,`phone`,`email`,`address`,`remark`,`userImg`,`status`,`createTime`,`updateTime`) VALUES 
 ('1','1','2','测试2','123456','1','测试2','13666666667','test@admin.com','地址2','','','1',now(),now()),
-('2','2','1','测试1','123456','1','测试1','13666666666','admin@admin.com','地址1','','','1',now(),now())
+('2','2','1','测试1','123456','1','测试1','13666666666','admin@admin.com','地址1','','','1',now(),now());
 
 
 /*

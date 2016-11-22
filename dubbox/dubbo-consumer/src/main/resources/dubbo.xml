@@ -7,9 +7,9 @@
 
     <dubbo:registry protocol="zookeeper" address="${zookeeper.host}" />
 
-    <dubbo:protocol name="dubbo" port="-1" threadpool="cached" threads="200"/>
+    <dubbo:protocol name="dubbo" port="-1"/>
     <!-- url:指定访问资源 -->
-    <dubbo:reference interface="com.example.dubbo.service.HelloService" id="helloService" >
+    <dubbo:reference interface="com.example.dubbo.service.HelloService" id="helloService" timeout="10000" retries="10">
     </dubbo:reference>
 
 

@@ -66,6 +66,21 @@ public class ShiroConfiguration {
     }
 
     /**
+     * shiro缓存配置
+     * @param shiroSettings
+     * @return
+     */
+    @Bean
+    public RedisManager redisManager(ShiroSettings shiroSettings){
+        RedisManager redisManager = new RedisManager();
+        redisManager.setHost(shiroSettings.getRedis().getHost());
+        redisManager.setPassword(shiroSettings.getRedis().getPassword());
+        redisManager.setPort(shiroSettings.getRedis().getPort());
+        redisManager.setExpire(shiroSettings.getRedis().getExpire());
+        return redisManager;
+    }
+
+    /**
      * 会话DAO
      * @return
      */
@@ -89,7 +104,7 @@ public class ShiroConfiguration {
      * @return
      */
     @Bean
-    public DefaultWebSessionManager sessionManager(RedisSessionDAO sessionDAO, SimpleCookie simpleCookie){
+    public DefaultWebSessionManager sessionManager(RedisSessionDAO sessionDAO, SimpleCookie sessionIdCookie){
         DefaultWebSessionManager defaultWebSessionManager = new MySessionManager();
         //会话的全局过期时间
         defaultWebSessionManager.setGlobalSessionTimeout(1800000);
@@ -102,8 +117,20 @@ public class ShiroConfiguration {
         //是否开启COOKIE验证调度器,默认开启
         defaultWebSessionManager.setSessionIdCookieEnabled(true);
         //设置COOKIE
-        defaultWebSessionManager.setSessionIdCookie(simpleCookie);
+        defaultWebSessionManager.setSessionIdCookie(sessionIdCookie);
         return defaultWebSessionManager;
+    }
+
+    /**
+     * shiro缓存配置
+     * @param redisManager
+     * @return
+     */
+    @Bean
+    public RedisCacheManager cacheManager(RedisManager redisManager){
+        RedisCacheManager redisCacheManager = new RedisCacheManager();
+        redisCacheManager.setRedisManager(redisManager);
+        return redisCacheManager;
     }
 
     /**
@@ -112,11 +139,11 @@ public class ShiroConfiguration {
      * @return
      */
     @Bean
-    public DefaultWebSecurityManager securityManager(Collection<Realm> realms, SessionManager sessionManager,RedisCacheManager redisCacheManager){
+    public DefaultWebSecurityManager securityManager(Collection<Realm> realms, SessionManager sessionManager,RedisCacheManager cacheManager){
         DefaultWebSecurityManager defaultWebSecurityManager = new DefaultWebSecurityManager();
         defaultWebSecurityManager.setRealms(realms);
         defaultWebSecurityManager.setSessionManager(sessionManager);
-        defaultWebSecurityManager.setCacheManager(redisCacheManager);
+        defaultWebSecurityManager.setCacheManager(cacheManager);
         return defaultWebSecurityManager;
     }
 
@@ -151,31 +178,7 @@ public class ShiroConfiguration {
         return authorizationAttributeSourceAdvisor;
     }
 
-    /**
-     * shiro缓存配置
-     * @param redisManager
-     * @return
-     */
-    @Bean
-    public RedisCacheManager cacheManager(RedisManager redisManager){
-        RedisCacheManager redisCacheManager = new RedisCacheManager();
-        redisCacheManager.setRedisManager(redisManager);
-        return redisCacheManager;
-    }
-    /**
-     * shiro缓存配置
-     * @param shiroSettings
-     * @return
-     */
-    @Bean
-    public RedisManager redisManager(ShiroSettings shiroSettings){
-        RedisManager redisManager = new RedisManager();
-        redisManager.setHost(shiroSettings.getRedis().getHost());
-        redisManager.setPassword(shiroSettings.getRedis().getPassword());
-        redisManager.setPort(shiroSettings.getRedis().getPort());
-        redisManager.setExpire(shiroSettings.getRedis().getExpire());
-        return redisManager;
-    }
+
 
 
 }

@@ -30,23 +30,23 @@ public class AppTest {
 
     @Test
     public void test(){
-//        for(int i = 0; i < 10000; i++){
+        for(int i = 0; i < 1000; i++){
 //            System.out.println("开始执行" + i);
-            helloService.sayHello("123");
+            helloService.sayHello(i + "");
 
-//        }
+        }
 
     }
 
     @Test
     public void MultiRequestsTest() throws InterruptedException {
         ExecutorService exec = Executors.newFixedThreadPool(500);
+        System.out.println("开始执行");
         for (int i = 0; i < 500; i++) {
             exec.execute(new Test1(helloService, i));
         }
         exec.shutdown();
         Thread.sleep(1000000);
-        System.out.println("111");
     }
 
 }
@@ -63,8 +63,8 @@ class Test1 extends Thread{
 
     @Override
     public void run(){
-        System.out.println("开始执行"+i);
-        helloService.sayHello(i+"");
+        String s = helloService.sayHello(i + "");
+        System.out.println(s);
     }
 
 }

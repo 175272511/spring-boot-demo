@@ -10,6 +10,7 @@ public class RedisSettings implements Serializable {
     private String host = "localhost";
     private String password;
     private int port = 6379;
+    //无效, crazycake.RedisManager没有该配置
     private int database = 0;
     //放入redis中的用户、权限等信息超时时间，默认1800秒即半个小时，建议跟tomcat的session失效时间一致
     private int expire = 1800;

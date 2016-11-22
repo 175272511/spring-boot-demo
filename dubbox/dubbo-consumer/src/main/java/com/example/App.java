@@ -18,7 +18,7 @@ public class App {
 
     private boolean start;
 
-    @Scheduled(fixedRate = 500)
+//    @Scheduled(fixedRate = 500)
     public void test(){
         if (!start){
             System.out.println("开始测试");

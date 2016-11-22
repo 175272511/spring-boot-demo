@@ -36,10 +36,10 @@ public class ZookeeperSimple implements Watcher {
          * data:节点可以带上数据
          * acl:策略,如果对权限没有要求,一般传Ids.OPEN_ACL_UNSAFE即可
          * mode:节点类型:
-         * 持久 PERSISTENT(0, false, false),
-         * 持久顺序  PERSISTENT_SEQUENTIAL(2, false, true),
-         * 临时  EPHEMERAL(1, true, false),
-         * 临时顺序  EPHEMERAL_SEQUENTIAL(3, true, true);
+         *            持久 PERSISTENT(0, false, false),
+         *            持久顺序  PERSISTENT_SEQUENTIAL(2, false, true),
+         *            临时  EPHEMERAL(1, true, false),
+         *            临时顺序  EPHEMERAL_SEQUENTIAL(3, true, true);
          */
         String randomStr = RandomStringUtils.randomAlphabetic(5);
         String path = zooKeeper.create("/zk-test-" + randomStr, "测试".getBytes(), ZooDefs.Ids.OPEN_ACL_UNSAFE, CreateMode.EPHEMERAL);
