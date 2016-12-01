@@ -1,9 +1,16 @@
 package com.example.zookeeper;
 
 import org.apache.commons.lang3.RandomStringUtils;
+import org.apache.curator.CuratorZookeeperClient;
+import org.apache.curator.framework.CuratorFramework;
+import org.apache.curator.framework.CuratorFrameworkFactory;
+import org.apache.curator.framework.recipes.cache.NodeCache;
+import org.apache.curator.framework.recipes.cache.NodeCacheListener;
 import org.apache.zookeeper.*;
+import org.apache.zookeeper.data.Stat;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.concurrent.CountDownLatch;
 
 /**
@@ -12,6 +19,7 @@ import java.util.concurrent.CountDownLatch;
 public class ZookeeperSimple implements Watcher {
 
     private static CountDownLatch countDownLatch = new CountDownLatch(1);
+    private static Stat stat = new Stat();
 
     /**
      * 接收服务端事件通知
@@ -28,6 +36,8 @@ public class ZookeeperSimple implements Watcher {
     public static void main(String[] args) throws Exception {
         //创建链接
         ZooKeeper zooKeeper = new ZooKeeper("192.168.1.205:2181",5000, new ZookeeperSimple());
+        //权限管理,防止其他应用调用, 注意: 在删除操作中,只会对该节点的子节点具有权限管理, 该节点还是可以在无授权的情况下删除,其他操作不会.
+        zooKeeper.addAuthInfo("digest", "权限测试:true".getBytes());
         System.out.println(zooKeeper.getState());
 
         /**
@@ -48,9 +58,25 @@ public class ZookeeperSimple implements Watcher {
         System.out.println("创建节点:" + path);
         System.out.println("创建节点:" + path1);
 
-        //删除节点
-//        zooKeeper.delete();
         countDownLatch.await();
+
+        //获取子节点
+        String path2 = "/zk-test-child";
+        zooKeeper.create(path2, "测试".getBytes(), ZooDefs.Ids.OPEN_ACL_UNSAFE, CreateMode.PERSISTENT);
+        zooKeeper.create(path2 + "/c1", "测试".getBytes(), ZooDefs.Ids.OPEN_ACL_UNSAFE, CreateMode.PERSISTENT);
+        List<String> children = zooKeeper.getChildren(path2, true);
+        System.out.println("子节点: " + children.toString());
+
+        //获取节点数据
+        zooKeeper.getData(path2, true, stat);
+        //更新节点数据, -1指基于最新版本更新操作, 如果更新没有原子性要求可用-1
+        Stat _stat = zooKeeper.setData(path2, "test".getBytes(), -1);
+        //根据上一版本进行更新,如果版本不对会报错, 可保证原子性操作
+        zooKeeper.setData(path2, "test".getBytes(), _stat.getVersion());
+        //删除节点
+        zooKeeper.delete(path2, -1);
+        //检测节点存在,更新和删除, 不会检测子节点
+        zooKeeper.exists(path2, true);
 
         /**
          * 创建异步节点
@@ -67,6 +93,17 @@ public class ZookeeperSimple implements Watcher {
                 "context test"
                 );
         Thread.sleep(10000);
+
+//        CuratorFramework curatorFramework = CuratorFrameworkFactory.builder().build();
+//        curatorFramework.start();
+//        final NodeCache nodeCache = new NodeCache(curatorFramework, "");
+//        nodeCache.getListenable().addListener(new NodeCacheListener() {
+//            @Override
+//            public void nodeChanged() throws Exception {
+//                nodeCache.getCurrentData().getData();
+//            }
+//        });
+//        nodeCache.start();
     }
 }
 
@@ -74,7 +111,7 @@ public class ZookeeperSimple implements Watcher {
 class IStringCallback implements AsyncCallback.StringCallback{
 
     /**
-     * 创建节点回调
+     * 异步创建节点回调
      * @param rc 响应码 0成功 -4断开连接 -110节点已存在 -112会话已过期
      * @param path  节点路径
      * @param ctx   内容
