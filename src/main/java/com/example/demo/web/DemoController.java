@@ -4,6 +4,7 @@ import com.example.demo.domain.TAuthUser;
 import com.example.demo.service.TAuthUserService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import com.jlings.cache.annotation.JlingsCache;
 import org.apache.shiro.authc.IncorrectCredentialsException;
 import org.apache.shiro.authc.UnknownAccountException;
 import org.slf4j.Logger;

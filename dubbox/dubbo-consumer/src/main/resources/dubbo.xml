@@ -9,7 +9,7 @@
 
     <dubbo:protocol name="dubbo" port="-1"/>
     <!-- url:指定访问资源 -->
-    <dubbo:reference interface="com.example.dubbo.service.HelloService" id="helloService" timeout="10000" retries="10">
+    <dubbo:reference interface="com.example.dubbo.service.HelloService" id="helloService" timeout="10000" retries="0">
     </dubbo:reference>
 
 

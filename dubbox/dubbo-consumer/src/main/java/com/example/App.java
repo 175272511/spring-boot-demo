@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
+import java.util.Date;
+
 /**
  * Hello world!
  *
@@ -18,7 +20,7 @@ public class App {
 
     private boolean start;
 
-//    @Scheduled(fixedRate = 500)
+    @Scheduled(fixedRate = 500)
     public void test(){
         if (!start){
             System.out.println("开始测试");
@@ -29,6 +31,7 @@ public class App {
 //            System.out.println(name);
 
         }catch (Exception e){
+            System.out.println("调用出错:" + new Date());
             e.printStackTrace();
         }
     }

@@ -23,7 +23,7 @@ public class LoginController {
 
     @RequestMapping("index")
     public String index(){
-        return "login";
+        return "index";
     }
 
     @RequestMapping("login")

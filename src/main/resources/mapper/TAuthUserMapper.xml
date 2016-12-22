@@ -46,6 +46,7 @@
           t_auth_role_permission tarp
       WHERE
           tau.roleId = tarp.roleId
+      AND tap.status = 1
       AND tarp.permissionId = tap.id
       AND tau.username = #{username};
   </select>

@@ -151,22 +151,22 @@ public class ShiroConfiguration {
      * Shiro生命周期处理器
      * @return
      */
-    @Bean
-    public LifecycleBeanPostProcessor lifecycleBeanPostProcessor(){
-        return new LifecycleBeanPostProcessor();
-    }
+//    @Bean
+//    public LifecycleBeanPostProcessor lifecycleBeanPostProcessor(){
+//        return new LifecycleBeanPostProcessor();
+//    }
 
     /**
      * 支持shiro权限注解
      * @return
      */
-    @Bean
-    @DependsOn("lifecycleBeanPostProcessor")
-    public DefaultAdvisorAutoProxyCreator defaultAdvisorAutoProxyCreator(){
-        DefaultAdvisorAutoProxyCreator defaultAdvisorAutoProxyCreator = new DefaultAdvisorAutoProxyCreator();
-        defaultAdvisorAutoProxyCreator.setProxyTargetClass(true);
-        return defaultAdvisorAutoProxyCreator;
-    }
+//    @Bean
+//    @DependsOn("lifecycleBeanPostProcessor")
+//    public DefaultAdvisorAutoProxyCreator defaultAdvisorAutoProxyCreator(){
+//        DefaultAdvisorAutoProxyCreator defaultAdvisorAutoProxyCreator = new DefaultAdvisorAutoProxyCreator();
+//        defaultAdvisorAutoProxyCreator.setProxyTargetClass(true);
+//        return defaultAdvisorAutoProxyCreator;
+//    }
     /**
      * 支持shiro权限注解
      * @return
