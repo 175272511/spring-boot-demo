@@ -38,6 +38,12 @@ public class ExceptionHandlers {
     @ExceptionHandler
     void handleControllerException(HandlerMethod handlerMethod, HttpServletRequest request,
                                    HttpServletResponse response, Throwable ex) throws IOException {
+        //没有权限
+        if (ex instanceof UnauthorizedException){
+            response.sendRedirect("unauthorized");
+            return;
+        }
+
         LOGGER.error("exception url: " + request.getRequestURL().toString());
         LOGGER.error("exception data: " + getParameter(request));
         LOGGER.error("exception info: ", ex);

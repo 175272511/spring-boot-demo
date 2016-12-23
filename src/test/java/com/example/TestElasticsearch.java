@@ -41,4 +41,6 @@ public class TestElasticsearch extends DemoApplicationTests {
 //        Page<StoreFansDetail> storeFansDetails = elasticsearchTemplate.queryForPage(criteriaQuery, StoreFansDetail.class);
         System.out.println(storeFansDetails);
     }
+
+
 }
