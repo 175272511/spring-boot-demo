@@ -2,9 +2,12 @@ package com.example.javaconfig.shiroconfig;
 
 import com.example.javaconfig.druidconfig.DruidConfiguration;
 import com.example.javaconfig.mybatisconfig.MybatisConfiguration;
+import io.buji.pac4j.filter.CallbackFilter;
+import io.buji.pac4j.filter.SecurityFilter;
 import org.apache.shiro.mgt.SecurityManager;
 import org.apache.shiro.realm.Realm;
 import org.apache.shiro.session.mgt.SessionManager;
+import org.apache.shiro.spring.LifecycleBeanPostProcessor;
 import org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor;
 import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
 import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
@@ -13,16 +16,27 @@ import org.apache.shiro.web.session.mgt.DefaultWebSessionManager;
 import org.crazycake.shiro.RedisCacheManager;
 import org.crazycake.shiro.RedisManager;
 import org.crazycake.shiro.RedisSessionDAO;
+import org.pac4j.cas.client.CasClient;
+import org.pac4j.cas.config.CasConfiguration;
+import org.pac4j.core.authorization.authorizer.RequireAnyRoleAuthorizer;
+import org.pac4j.core.client.Client;
+import org.pac4j.core.client.Clients;
+import org.pac4j.core.config.Config;
+import org.pac4j.core.matching.ExcludedPathMatcher;
+import org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator;
 import org.springframework.boot.autoconfigure.AutoConfigureBefore;
 import org.springframework.boot.context.embedded.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.DependsOn;
 import org.springframework.core.Ordered;
 import org.springframework.web.filter.DelegatingFilterProxy;
 
 import javax.servlet.DispatcherType;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.EnumSet;
+import java.util.List;
 
 /**
  * Created by liuhui on 2016/2/5.
@@ -150,22 +164,22 @@ public class ShiroConfiguration {
      * Shiro生命周期处理器
      * @return
      */
-//    @Bean
-//    public LifecycleBeanPostProcessor lifecycleBeanPostProcessor(){
-//        return new LifecycleBeanPostProcessor();
-//    }
+    @Bean
+    public LifecycleBeanPostProcessor lifecycleBeanPostProcessor(){
+        return new LifecycleBeanPostProcessor();
+    }
 
     /**
      * 支持shiro权限注解
      * @return
      */
-//    @Bean
-//    @DependsOn("lifecycleBeanPostProcessor")
-//    public DefaultAdvisorAutoProxyCreator defaultAdvisorAutoProxyCreator(){
-//        DefaultAdvisorAutoProxyCreator defaultAdvisorAutoProxyCreator = new DefaultAdvisorAutoProxyCreator();
-//        defaultAdvisorAutoProxyCreator.setProxyTargetClass(true);
-//        return defaultAdvisorAutoProxyCreator;
-//    }
+    @Bean
+    @DependsOn("lifecycleBeanPostProcessor")
+    public DefaultAdvisorAutoProxyCreator defaultAdvisorAutoProxyCreator(){
+        DefaultAdvisorAutoProxyCreator defaultAdvisorAutoProxyCreator = new DefaultAdvisorAutoProxyCreator();
+        defaultAdvisorAutoProxyCreator.setProxyTargetClass(true);
+        return defaultAdvisorAutoProxyCreator;
+    }
     /**
      * 支持shiro权限注解
      * @return

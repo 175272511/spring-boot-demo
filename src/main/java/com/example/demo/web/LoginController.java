@@ -10,6 +10,8 @@ import org.apache.shiro.web.util.SavedRequest;
 import org.apache.shiro.web.util.WebUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,9 +27,18 @@ public class LoginController {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(LoginController.class);
 
+    @Autowired
+    RedisTemplate redisTemplate;
+
     @RequestMapping("index")
     public String index(){
         return "index";
+    }
+
+    @RequestMapping("callback")
+    public String callback(){
+        System.out.println("进入回调");
+        return null;
     }
 
     @RequestMapping("login")

@@ -11,7 +11,6 @@
 	</modules>
 
 	<packaging>pom</packaging>
-	<!--<packaging>war</packaging>-->
 
 	<name>demo</name>
 	<description>Demo project for Spring Boot</description>
@@ -68,6 +67,10 @@
 			<!--<artifactId>spring-boot-starter-remote-shell</artifactId>-->
 		<!--</dependency>-->
 		<!-- jsp -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-redis</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-tomcat</artifactId>
@@ -206,6 +209,35 @@
 			<artifactId>commons-codec</artifactId>
 		</dependency>
 
+		<dependency>
+			<groupId>org.apache.curator</groupId>
+			<artifactId>curator-client</artifactId>
+			<version>2.11.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.zookeeper</groupId>
+			<artifactId>zookeeper</artifactId>
+			<version>3.4.6</version>
+		</dependency>
+
+		<!-- CAS https://mvnrepository.com/artifact/io.buji/buji-pac4j -->
+		<dependency>
+			<groupId>io.buji</groupId>
+			<artifactId>buji-pac4j</artifactId>
+			<version>2.0.3</version>
+		</dependency>
+
+		<!-- CAS https://mvnrepository.com/artifact/org.pac4j/pac4j-cas -->
+		<dependency>
+			<groupId>org.pac4j</groupId>
+			<artifactId>pac4j-cas</artifactId>
+			<version>1.9.4</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-elasticsearch</artifactId>
+		</dependency>
 
 	</dependencies>
 

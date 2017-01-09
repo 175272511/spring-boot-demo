@@ -3,7 +3,7 @@ package com.example.demo.service.impl;
 import com.example.demo.domain.TAuthUser;
 import com.example.demo.mapper.TAuthUserMapper;
 import com.example.demo.service.TAuthUserService;
-import com.jlings.cache.annotation.JlingsCache;
+//import com.jlings.cache.annotation.JlingsCache;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -22,7 +22,6 @@ public class TAuthUserServiceImpl implements TAuthUserService {
     private TAuthUserMapper tAuthUserMapper;
 
     @Override
-    @JlingsCache
     public List<TAuthUser> getUserInfo() {
         return tAuthUserMapper.selectUserData();
     }
