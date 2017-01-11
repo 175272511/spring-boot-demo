@@ -11,7 +11,7 @@ public class TestOkHttp {
     static OkHttpClient client = new OkHttpClient();
 
     public static void main(String[] args) throws IOException {
-        Request request = new Request.Builder().url("http://www.baidu.com").build();
+        Request request = new Request.Builder().url("http://www.baidu.com").get().build();
         Response response = client.newCall(request).execute();
         if (response.isSuccessful()) {
             System.out.println(response.body().string());

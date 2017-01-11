@@ -35,7 +35,7 @@ public class TestElasticsearch extends DemoApplicationTests {
 
         StringQuery stringQuery = new StringQuery("{\"query\":{\"match\":{\"OPENID\":\"ovaDDjuXSLBm4y8pCkXFjeBOjHv4\"}}}");
         Pageable pageable = new PageRequest(0, 1000);
-        CriteriaQuery criteriaQuery = new CriteriaQuery(new Criteria("FANS_NAME").contains("中国梦"), pageable);
+        CriteriaQuery criteriaQuery = new CriteriaQuery(new Criteria("FANS_NAME").expression("中国梦"), pageable);
 //        List<StoreFansDetail> storeFansDetails = elasticsearchTemplate.queryForList(stringQuery, StoreFansDetail.class);
         List<StoreFansDetail> storeFansDetails = elasticsearchTemplate.queryForList(criteriaQuery, StoreFansDetail.class);
 //        Page<StoreFansDetail> storeFansDetails = elasticsearchTemplate.queryForPage(criteriaQuery, StoreFansDetail.class);

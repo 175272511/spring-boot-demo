@@ -2,8 +2,6 @@ package com.example.javaconfig.shiroconfig;
 
 import com.example.javaconfig.druidconfig.DruidConfiguration;
 import com.example.javaconfig.mybatisconfig.MybatisConfiguration;
-import io.buji.pac4j.filter.CallbackFilter;
-import io.buji.pac4j.filter.SecurityFilter;
 import org.apache.shiro.mgt.SecurityManager;
 import org.apache.shiro.realm.Realm;
 import org.apache.shiro.session.mgt.SessionManager;
@@ -16,13 +14,6 @@ import org.apache.shiro.web.session.mgt.DefaultWebSessionManager;
 import org.crazycake.shiro.RedisCacheManager;
 import org.crazycake.shiro.RedisManager;
 import org.crazycake.shiro.RedisSessionDAO;
-import org.pac4j.cas.client.CasClient;
-import org.pac4j.cas.config.CasConfiguration;
-import org.pac4j.core.authorization.authorizer.RequireAnyRoleAuthorizer;
-import org.pac4j.core.client.Client;
-import org.pac4j.core.client.Clients;
-import org.pac4j.core.config.Config;
-import org.pac4j.core.matching.ExcludedPathMatcher;
 import org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator;
 import org.springframework.boot.autoconfigure.AutoConfigureBefore;
 import org.springframework.boot.context.embedded.FilterRegistrationBean;
@@ -192,6 +183,14 @@ public class ShiroConfiguration {
     }
 
 
-
+//    动态url授权相关配置
+//    @Bean(name = "chainDefinitionSectionMetaSource")
+//    public ChainDefinitionSectionMetaSource chainDefinitionSectionMetaSource(ShiroSettings settings,AccountService accountService){
+//        ChainDefinitionSectionMetaSource chainDefinitionSectionMetaSource = new ChainDefinitionSectionMetaSource();
+//        chainDefinitionSectionMetaSource.setAccountService(accountService);
+//        chainDefinitionSectionMetaSource.setShiroSettings(settings);
+//        chainDefinitionSectionMetaSource.setFilterChainDefinitions(settings.getFilterChainDefinitions());
+//        return chainDefinitionSectionMetaSource;
+//    }
 
 }
