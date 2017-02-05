@@ -10,10 +10,12 @@ import org.springframework.data.elasticsearch.annotations.Mapping;
 import java.io.Serializable;
 import java.util.Date;
 
+import static org.springframework.data.elasticsearch.annotations.FieldType.String;
+
 /**
  * Created by liuhui on 2016/12/8.
  */
-@Document(indexName = "myindex", type = "mytype", shards = 1, replicas = 0, refreshInterval = "-1")
+@Document(indexName = "testik", type = "testiktype", shards = 1, replicas = 0, refreshInterval = "-1")
 public class StoreFansDetail  {
 
     /**
@@ -93,6 +95,7 @@ public class StoreFansDetail  {
     /**
      *  所在市
      */
+    @Field(type = String,analyzer = "ik_pinyin_analyzer")
     private String storeCity;
     /**
      *  粉丝获取方式(分为”粉丝主动选择“ 1 、”手动分配粉丝“ 2 、”店员主动拉粉“ 3三种情况)
