@@ -20,6 +20,8 @@ import org.springframework.test.context.web.WebAppConfiguration;
 import java.util.Date;
 import java.util.List;
 
+import static org.elasticsearch.index.query.QueryBuilders.*;
+
 
 /**
  * Created by liuhui on 2016/12/7.
@@ -105,6 +107,46 @@ public class TestElasticsearch extends DemoApplicationTests {
         Long b = elasticsearchTemplate.count(criteriaQuery, StoreFansDetail.class);
         System.out.println(b);
 
+    }
+
+    @Test
+    public void testAdd(){
+//        elasticsearchTemplate.deleteIndex(StoreFansDetail.class);
+        String setting = "{\n" +
+                "    \"index\": {\n" +
+                "        \"analysis\": {\n" +
+                "            \"analyzer\": {\n" +
+                "                \"ik_pinyin_analyzer\": {\n" +
+                "                    \"type\": \"custom\",\n" +
+                "                    \"tokenizer\": \"ik_smart\",\n" +
+                "                    \"filter\": [\"my_pinyin\", \"word_delimiter\"]\n" +
+                "                }\n" +
+                "            },\n" +
+                "            \"filter\": {\n" +
+                "                \"my_pinyin\": {\n" +
+                "                    \"type\": \"pinyin\",\n" +
+                "                    \"first_letter\": \"prefix\",\n" +
+                "                    \"padding_char\": \" \"\n" +
+                "                }\n" +
+                "            }\n" +
+                "        }\n" +
+                "    }\n" +
+                "}";
+        elasticsearchTemplate.createIndex(StoreFansDetail.class, setting);
+        StoreFansDetail storeFansDetail = new StoreFansDetail();
+        storeFansDetail.setStoreCity("中国人民万岁");
+        storeFansDetail.setMchUuid("123123");
+        elasticsearchTemplate.putMapping(StoreFansDetail.class);
+        elasticsearchTemplate.index(new IndexQueryBuilder().withId("1").withObject(storeFansDetail).build());
+    }
+
+    @Test
+    public void testQuery(){
+        Criteria criteria = new Criteria("storeCity").expression("zhon");
+        CriteriaQuery criteriaQuery = new CriteriaQuery(criteria);
+        SearchQuery searchQuery = new NativeSearchQueryBuilder().withQuery(matchQuery("storeCity.pinyin","zgrmws")).build();
+        List<StoreFansDetail> storeFansDetails = elasticsearchTemplate.queryForList(criteriaQuery, StoreFansDetail.class);
+        System.out.println(storeFansDetails);
     }
 
 
