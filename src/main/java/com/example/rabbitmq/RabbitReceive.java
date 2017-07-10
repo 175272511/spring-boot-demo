@@ -33,6 +33,6 @@
 //
 //    @RabbitHandler
 //    public void process(RabbitVO rabbitVO){
-//        System.out.println("Consumer1:" + rabbitVO);
+//        System.out.println("Consumer1:" + rabbitVO + ":" + System.currentTimeMillis());
 //    }
 //}
