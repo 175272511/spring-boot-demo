@@ -57,7 +57,12 @@ public class CuratorSimple {
         nodeCache.start();
 
 
-        /**选举机制*/
+        /**
+         * 选举机制
+         * Curator提供了两种选举方案：Leader Latch和Leader Election
+         * Leader Latch随机从候选着中选出一台作为leader，选中之后除非调用close()释放leadship，否则其他的候选者无法成为leader。
+         * Leader Election通过LeaderSelectorListener可以对领导权进行控制， 在适当的时候释放领导权，这样每个节点都有可能获得领导权。
+         */
         //在分布式调度中可以采用选举机制防止任务被重复执行
         final CountDownLatch countDownLatch = new CountDownLatch(1);
         for (int i = 0; i < 10; i++){
@@ -67,7 +72,7 @@ public class CuratorSimple {
                     try {
                         countDownLatch.await();
 
-                        new LeaderSelector(curatorFramework, path, new LeaderSelectorListener() {
+                        LeaderSelector leaderSelector = new LeaderSelector(curatorFramework, path, new LeaderSelectorListener() {
                             //获取master
                             @Override
                             public void takeLeadership(CuratorFramework curatorFramework) throws Exception {
@@ -87,7 +92,10 @@ public class CuratorSimple {
                                 }
 
                             }
-                        }).start();
+                        });
+                        //autoRequeue()方法的调用确保此实例在释放领导权后还可能获得领导权
+                        leaderSelector.autoRequeue();
+                        leaderSelector.start();
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
