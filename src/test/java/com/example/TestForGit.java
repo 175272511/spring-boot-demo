@@ -9,7 +9,7 @@ public class TestForGit {
     }
 
     public static void test(String[] args) {
-        System.out.println("功能开发2");
+        System.out.println("功能开发");
     }
 
 }
