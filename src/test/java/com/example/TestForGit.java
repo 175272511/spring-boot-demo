@@ -13,7 +13,6 @@ public class TestForGit {
         System.out.printf("5");
         System.out.printf("6");
         System.out.printf("7");
-        System.out.printf("8");
         System.out.printf("bugfix");
     }
 
