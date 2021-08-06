@@ -6,6 +6,8 @@ package com.example;
 public class TestForGit {
 
     public static void main(String[] args) {
+        System.out.println(1);
+        System.out.println(2);
     }
 
     public static void test(String[] args) {
