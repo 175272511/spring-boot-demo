@@ -16,6 +16,7 @@ public class TestForGit {
 
     public static void main(String[] args) throws IOException {
         System.out.println(1);
+        System.out.println(2);
     }
 
     public static void test(String[] args) {
